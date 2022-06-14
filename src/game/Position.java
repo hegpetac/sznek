@@ -31,4 +31,18 @@ public class Position {
     public void setY(int y) {
         this.y = y;
     }
+
+    public void move(Direction dir){
+        if(dir == Direction.UP)
+            y = (((y - 1) % 9) + 9) % 9;
+        else if(dir == Direction.RIGHT) {
+            x = (x + 1) % 12;
+        }
+        else if(dir == Direction.DOWN){
+            y = (y + 1) % 9;
+        }
+        else if(dir == Direction.LEFT){
+            x = (((x - 1) % 12) + 12) % 12;
+        }
+    }
 }

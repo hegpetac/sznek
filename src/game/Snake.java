@@ -35,17 +35,8 @@ public class Snake{
         }
 
         Position snakeHead = snake.get(0);
-        if(dir == Direction.UP)
-            snakeHead.setPosition(snakeHead.getX(),(((snakeHead.getY() - 1) % 9) + 9) % 9);
-        else if(dir == Direction.RIGHT) {
-            snakeHead.setPosition((snakeHead.getX() + 1) % 12, snakeHead.getY());
-        }
-        else if(dir == Direction.DOWN){
-            snakeHead.setPosition(snakeHead.getX(), (snakeHead.getY() + 1) % 9);
-        }
-        else if(dir == Direction.LEFT){
-                snakeHead.setPosition((((snakeHead.getX() - 1) % 12) + 12) % 12, snakeHead.getY());
-        }
+        snakeHead.move(dir);
+
     }
 
     /**
